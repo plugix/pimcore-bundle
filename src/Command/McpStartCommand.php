@@ -33,6 +33,9 @@ class McpStartCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        // Suppress deprecation warnings (PHP 8.4 compatibility issues in Pimcore core)
+        error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+
         $io = new SymfonyStyle($input, $output);
 
         $io->title('Plugix MCP Server');
