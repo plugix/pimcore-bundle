@@ -28,7 +28,6 @@ class McpStartCommand extends Command
     {
         $this
             ->addOption('daemon', 'd', InputOption::VALUE_NONE, 'Run as daemon in background')
-            ->addOption('verbose', 'v', InputOption::VALUE_NONE, 'Verbose output')
         ;
     }
 
