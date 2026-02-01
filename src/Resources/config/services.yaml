@@ -27,34 +27,7 @@ services:
             $reconnectInterval: '%plugix.mcp.reconnect_interval%'
         public: true
 
-    # AI Services
-    Plugix\PimcoreBundle\Service\ProductDescriptionService:
-        arguments:
-            $enabled: '%plugix.features%'
-        public: true
-
-    Plugix\PimcoreBundle\Service\TranslationService:
-        arguments:
-            $languages: '%plugix.languages%'
-        public: true
-
-    Plugix\PimcoreBundle\Service\SeoService:
-        public: true
-
-    # Installer
-    Plugix\PimcoreBundle\Installer:
-        public: true
-
     # Commands
     Plugix\PimcoreBundle\Command\McpStartCommand:
         tags:
             - { name: console.command }
-
-    Plugix\PimcoreBundle\Command\GenerateDescriptionsCommand:
-        tags:
-            - { name: console.command }
-
-    # Event Listeners
-    Plugix\PimcoreBundle\EventListener\DataObjectListener:
-        tags:
-            - { name: kernel.event_listener, event: pimcore.dataobject.postUpdate }

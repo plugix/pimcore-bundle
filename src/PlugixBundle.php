@@ -30,9 +30,4 @@ class PlugixBundle extends AbstractPimcoreBundle
     {
         return 'plugix/pimcore-bundle';
     }
-
-    public function getInstaller(): Installer
-    {
-        return $this->container->get(Installer::class);
-    }
 }
